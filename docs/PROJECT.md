@@ -243,3 +243,9 @@ Before genuine publication: replace the origin, review indexing settings togethe
 - Validation: lint and strict typecheck passed. Production build passed with `NODE_ENV=production`; the inherited nonstandard local value caused the first build to fail. All implemented routes were generated.
 - Status: repository configuration is ready; the observed public Vercel platform `NOT_FOUND` does not identify a unique cause. Authenticated Vercel settings/build logs are not available in this session, so root-directory and domain/deployment assignments remain unverified. Assets and backend integrations remain deferred.
 - Next task: verify the new production deployment and its domain; if the platform 404 persists, inspect Vercel root directory, build logs, commit, and production domain assignment.
+
+### 2026-09-08 — Repair clean-install dependency lock
+
+- Reproduced `npm ci` EUSAGE locally: transitive WASM resolver dependencies were missing/inconsistent in the lockfile despite matching top-level package declarations. Regenerated `package-lock.json` with npm; no application dependencies or UI/routes changed.
+- Validation: isolated fresh install succeeded (437 packages, lifecycle scripts disabled); lint, typecheck, and production build passed. Existing Windows dev-server native module locks prevented in-place clean replacement, so validation used a temporary directory and local dependencies were restored.
+- Status: clean-install fix prepared for Vercel; live deployment success remains unverified. Next task: deploy the updated main commit and inspect its build outcome. Assets and backend work remain deferred.
