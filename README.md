@@ -42,7 +42,7 @@ shell already overrides it, clear it before running scripts (PowerShell:
 ## Vercel deployment
 
 Import this repository with Root Directory set to the repository root (leave it blank),
-and production branch `main`. `vercel.json` explicitly selects Next.js, `npm ci`,
+and production branch `main`. `vercel.json` explicitly selects Next.js, `npm install --no-audit --no-fund`,
 `npm run build`, and `.next` output. Do not select `public`, `dist`, or `app` as
 the root directory or add a catch-all SPA rewrite. No environment variables are required.
 

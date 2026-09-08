@@ -249,3 +249,10 @@ Before genuine publication: replace the origin, review indexing settings togethe
 - Reproduced `npm ci` EUSAGE locally: transitive WASM resolver dependencies were missing/inconsistent in the lockfile despite matching top-level package declarations. Regenerated `package-lock.json` with npm; no application dependencies or UI/routes changed.
 - Validation: isolated fresh install succeeded (437 packages, lifecycle scripts disabled); lint, typecheck, and production build passed. Existing Windows dev-server native module locks prevented in-place clean replacement, so validation used a temporary directory and local dependencies were restored.
 - Status: clean-install fix prepared for Vercel; live deployment success remains unverified. Next task: deploy the updated main commit and inspect its build outcome. Assets and backend work remain deferred.
+
+### 2026-09-08 — Vercel install fallback
+
+- Changed `vercel.json` install command to `npm install --no-audit --no-fund` after another reported `npm ci` failure. Updated README deployment instructions. This permits npm to reconcile dependency-lock differences on the deployment host; it is less strict than immutable `npm ci` installation.
+- The supplied log tail does not identify the failing dependency or deployed commit, so the exact latest Vercel cause remains unconfirmed. No routes, components, assets, or runtime dependency declarations changed.
+- Validation: the new command installed 437 packages in an empty temporary directory with lifecycle scripts enabled. Lint, typecheck, and production build passed.
+- Status: deployment workaround ready; live status remains unverified. Next task: deploy this latest main commit and confirm logs use `npm install --no-audit --no-fund`, then verify the public storefront. Revisit immutable CI installation after inspecting the Vercel npm version and full dependency error.
