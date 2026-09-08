@@ -1,0 +1,8 @@
+.card { display: grid; align-content: start; gap: 1rem; }
+.portrait { display: grid; aspect-ratio: 0.88; place-items: center; border-radius: 50% 50% 0 0 / 37% 37% 0 0; color: color-mix(in srgb, var(--color-primary) 70%, white); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; line-height: 1.5; overflow: hidden; text-align: center; text-transform: uppercase; }
+.sage { background: linear-gradient(145deg, #ced9cd, #e6ece1); }
+.oat { background: linear-gradient(145deg, #e6dbc7, #f4ecdf); }
+.mist { background: linear-gradient(145deg, #d7e2e0, #edf2ef); }
+.rating { margin: 0.15rem 0 0; color: var(--color-secondary); font-size: 1rem; letter-spacing: 0.12em; line-height: 1; }
+.card blockquote { width: min(100%, 20rem); margin: 0; color: var(--color-foreground); font-family: var(--font-body); font-size: 0.95rem; font-style: normal; line-height: 1.55; }
+.name { margin: 0.3rem 0 0; color: var(--color-foreground); font-family: var(--font-body); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }

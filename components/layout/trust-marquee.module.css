@@ -1,0 +1,7 @@
+.strip { overflow: hidden; background: var(--color-primary); color: var(--color-on-primary); }
+.track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.group { display: flex; flex: none; align-items: center; gap: 1.75rem; padding-right: 1.75rem; white-space: nowrap; }
+.group span { display: inline-flex; align-items: center; gap: 1.75rem; font-family: var(--font-heading); font-size: clamp(0.8rem, 0.65rem + 0.35vw, 1rem); letter-spacing: 0.025em; line-height: 2.5rem; }
+.group b { color: rgb(255 255 255 / 88%); font-family: var(--font-body); font-size: 0.85em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .track { animation-play-state: paused; } }

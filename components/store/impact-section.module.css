@@ -1,0 +1,18 @@
+.section { background: #faf3e7; padding: 0 var(--gutter); }
+.divider { width: min(100%, 104rem); height: 1px; margin: 0 auto; background: color-mix(in srgb, var(--color-border) 78%, transparent); }
+.layout { width: min(100%, 78rem); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); padding-block: clamp(4.5rem, 7vw, 7.5rem); }
+.visual { display: grid; width: 100%; min-height: clamp(29rem, 41vw, 35rem); place-items: center; overflow: hidden; border-radius: 50% 50% 0 0 / 37% 37% 0 0; background: radial-gradient(ellipse at 50% 12%, rgb(255 255 255 / 55%), transparent 57%), linear-gradient(150deg, #cbddeb, #eaf1f1 52%, #cbd7d0); color: color-mix(in srgb, var(--color-primary) 72%, white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.content { display: grid; align-content: center; justify-items: start; }
+.content > p { color: var(--color-foreground); }
+.content h2 { margin: 0.75rem 0 0; color: var(--color-secondary); font-size: clamp(2.25rem, 1.45rem + 2.85vw, 3.5rem); line-height: 1.12; }
+.points { display: grid; gap: clamp(1.35rem, 2.2vw, 2rem); margin-top: clamp(2.25rem, 3.6vw, 3.5rem); }
+.point { display: grid; grid-template-columns: 3.3rem minmax(0, 1fr); align-items: start; gap: 1rem; }
+.icon { display: grid; width: 3rem; height: 3rem; place-items: center; color: var(--color-secondary); }
+.icon svg { width: 2.7rem; height: 2.7rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+.point h3 { margin: 0; color: var(--color-foreground); font-family: var(--font-body); font-size: 0.93rem; font-weight: 600; line-height: 1.4; }
+.point p { max-width: 30rem; margin: 0.25rem 0 0; color: var(--color-foreground); font-size: 0.83rem; line-height: 1.5; }
+.marks { display: grid; width: min(100%, 32rem); grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.55rem; margin-top: clamp(2.25rem, 3.5vw, 3.25rem); }
+.marks span { display: grid; min-height: 3.25rem; place-items: center; border: 1px solid color-mix(in srgb, var(--color-border-strong) 38%, transparent); color: var(--color-muted); font-size: 0.54rem; font-weight: 600; letter-spacing: 0.075em; line-height: 1.35; padding: 0.35rem; text-align: center; text-transform: uppercase; }
+@media (max-width: 64rem) { .layout { gap: clamp(2rem, 5vw, 4rem); } .visual { min-height: 28rem; } }
+@media (max-width: 48rem) { .layout { grid-template-columns: 1fr; width: min(100%, 36rem); gap: 3rem; } .visual { min-height: min(28rem, 105vw); } .content { width: 100%; } }
+@media (max-width: 40rem) { .layout { padding-block: calc(var(--spacing) * 15); gap: calc(var(--spacing) * 12); } .visual { min-height: 21rem; } .points { margin-top: calc(var(--spacing) * 9); gap: calc(var(--spacing) * 7); } .point { grid-template-columns: 2.8rem minmax(0, 1fr); gap: 0.7rem; } .icon { width: 2.5rem; height: 2.5rem; } .icon svg { width: 2.25rem; height: 2.25rem; } .marks { gap: 0.35rem; } .marks span { min-height: 2.8rem; font-size: 0.48rem; } }

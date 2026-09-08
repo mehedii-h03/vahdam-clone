@@ -1,0 +1,6 @@
+.page { min-height: 100svh; background: var(--color-surface); }
+.main { display: grid; min-height: clamp(37rem, 57vw, 43rem); place-items: start center; padding: clamp(5.5rem, 8vw, 7.5rem) 1.5rem clamp(5rem, 9vw, 8rem); }
+.login { width: min(100%, 27.5rem); display: grid; justify-items: center; }
+.login h1 { margin: 0; color: var(--color-secondary); font-size: clamp(2.75rem, 2.25rem + 1.75vw, 3.5rem); }
+.login form { margin-top: 3rem; }
+@media (max-width: 40rem) { .main { min-height: auto; padding: 4.25rem 1.5rem 5rem; } .login form { margin-top: 2.25rem; } }

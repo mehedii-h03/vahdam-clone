@@ -1,0 +1,8 @@
+.form { width: min(100%, 30rem); }
+.label { display: block; margin-bottom: 0.75rem; font-family: var(--font-heading); font-size: 1.15rem; }
+.field { display: flex; min-height: 3.5rem; overflow: hidden; border: 1px solid color-mix(in srgb, var(--color-border-strong) 32%, white); border-radius: var(--radius-md); background: var(--color-surface); }
+.field input { min-width: 0; flex: 1; border: 0; background: transparent; color: var(--color-foreground); padding: 0.75rem 1rem; font-size: 0.84rem; }
+.field button { flex: 0 0 auto; min-width: 7.75rem; border: 0; background: var(--color-secondary); color: var(--color-on-secondary); font-family: var(--font-body); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: background-color var(--duration-fast) var(--ease-standard); }
+.field button:hover { background: color-mix(in srgb, var(--color-secondary) 85%, black); }
+.message { min-height: 1.35rem; margin: 0.45rem 0 0; color: var(--color-primary); font-size: 0.73rem; }
+@media (max-width: 26rem) { .field { display: grid; overflow: visible; } .field input { min-height: 3rem; border: 1px solid color-mix(in srgb, var(--color-border-strong) 32%, white); } .field button { min-height: 3rem; } }

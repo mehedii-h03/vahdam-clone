@@ -1,0 +1,7 @@
+.section { background: #faf3e7; padding: clamp(4.75rem, 7.25vw, 8.25rem) var(--gutter) clamp(3rem, 5vw, 5rem); }
+.intro { display: grid; justify-items: center; gap: 0.8rem; text-align: center; }
+.intro > p { color: var(--color-foreground); }
+.intro h2 { margin: 0; color: var(--color-secondary); font-size: clamp(2.25rem, 1.7rem + 2.25vw, 3.25rem); }
+.grid { width: min(100%, 57rem); margin: clamp(2.75rem, 4vw, 3.75rem) auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); }
+.divider { width: min(100%, 104rem); height: 1px; margin: clamp(4rem, 6.5vw, 6.5rem) auto 0; background: color-mix(in srgb, var(--color-border) 78%, transparent); }
+@media (max-width: 40rem) { .section { padding-block: calc(var(--spacing) * 17) calc(var(--spacing) * 12); } .grid { grid-template-columns: 1fr; width: min(100%, 21rem); gap: calc(var(--spacing) * 12); margin-top: calc(var(--spacing) * 10); } .divider { margin-top: calc(var(--spacing) * 16); } }

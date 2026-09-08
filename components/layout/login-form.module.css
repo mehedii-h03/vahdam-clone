@@ -1,0 +1,15 @@
+.form { width: min(100%, 27.5rem); display: grid; justify-items: stretch; }
+.fields { display: grid; gap: 1rem; }
+.fields > div { display: grid; gap: 0.35rem; }
+.fields input { width: 100%; min-height: 3.75rem; border: 1px solid transparent; border-radius: 0; background: #faf3e7; color: var(--color-foreground); padding: 0 1.25rem; font-size: 1rem; }
+.fields input::placeholder { color: #a1a19c; opacity: 1; }
+.fields input[aria-invalid="true"] { border-color: var(--color-error); }
+.visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.error { margin: 0; color: var(--color-error); font-size: 0.76rem; line-height: 1.35; }
+.textAction { justify-self: start; border: 0; background: transparent; color: var(--color-foreground); padding: 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.075em; text-align: left; text-decoration: underline; text-underline-offset: 0.28rem; text-transform: uppercase; }
+.fields + .textAction { margin-top: 1.35rem; }
+.submit { min-height: 3.875rem; margin-top: 2.25rem; border: 0; border-radius: 0; background: var(--color-secondary); color: var(--color-on-secondary); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.035em; text-transform: uppercase; transition: background-color var(--duration-fast) var(--ease-standard); }
+.submit:hover { background: color-mix(in srgb, var(--color-secondary) 85%, black); }
+.submit + .textAction { justify-self: center; margin-top: 1.85rem; }
+.message { min-height: 1.4rem; margin: 0.75rem 0 0; color: var(--color-primary); font-size: 0.78rem; text-align: center; }
+@media (max-width: 40rem) { .fields input { min-height: 3.5rem; } .submit { min-height: 3.65rem; margin-top: 1.8rem; } }
