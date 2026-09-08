@@ -1,6 +1,6 @@
 # Tea & Wellness Demo
 
-Frontend-only Next.js storefront foundation. No homepage design, products, or commerce flows are implemented.
+Frontend-only Next.js tea storefront demo with a homepage, local mock search, and a login UI. Authentication and commerce services remain deferred.
 
 ## Setup
 
@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. The root route is a setup placeholder.
+Open http://localhost:3000. The root route redirects to `/tea-shop`.
 
 Let Next.js manage `NODE_ENV`; do not set a nonstandard value globally. If your
 shell already overrides it, clear it before running scripts (PowerShell:
@@ -30,13 +30,26 @@ shell already overrides it, clear it before running scripts (PowerShell:
 
 - `app/`: App Router pages, root layout, global styles, visual tokens, internal design-system QA route, metadata endpoints, and icon.
 - `app/(store)/`: reserved route group for future store pages; adds no URL segment.
-- `app/tea-shop/`: reserved catalog directory; currently has no page.
-- `components/layout/`, `components/ui/`, `components/store/`: reserved component layers.
-- `data/`: future original demo fixtures.
+- `app/tea-shop/`: storefront homepage.
+- `app/account/login/`: frontend-only login demo.
+- `components/layout/`, `components/ui/`, `components/store/`: shared layout and storefront components.
+- `data/`: original static demo fixtures.
 - `lib/`: site settings, fonts, JSON-LD helpers.
 - `types/`: shared TypeScript contracts.
 - `public/images/`: future original or appropriately licensed images.
 - `docs/PROJECT.md`: single source of truth and chronological task history.
+
+## Vercel deployment
+
+Import this repository with Root Directory set to the repository root (leave it blank),
+and production branch `main`. `vercel.json` explicitly selects Next.js, `npm ci`,
+`npm run build`, and `.next` output. Do not select `public`, `dist`, or `app` as
+the root directory or add a catch-all SPA rewrite. No environment variables are required.
+
+After a push, verify the latest production deployment references that commit,
+finishes successfully, and owns the production domain. A platform `NOT_FOUND`
+requires checking the deployment build logs, root directory, and domain assignment;
+it does not by itself identify which setting is wrong.
 
 ## Development rules
 

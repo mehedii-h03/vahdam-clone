@@ -234,3 +234,12 @@ Before genuine publication: replace the origin, review indexing settings togethe
 - Validation: lint, strict typecheck, and production build passed.
 - Status: permitted header behavior and visual proportions are refined; exact reference-brand imagery and identity are intentionally outside scope.
 - Next recommended task: provide approved original hero imagery and final Morrow brand content for a coordinated visual-polish pass.
+
+### 2026-09-08 — Vercel deployment configuration
+
+- Added root `vercel.json` explicitly selecting the Next.js framework, `npm ci`, `npm run build`, and `.next` output to override potentially incorrect dashboard build settings. No SPA catch-all rewrite was added; Next.js retains its route handling.
+- Changed `/` from the obsolete setup placeholder to a redirect to `/tea-shop`. Existing homepage/account components and other routes are unchanged.
+- Updated README project status and documented repository-root deployment, production branch `main`, and deployment/domain troubleshooting.
+- Validation: lint and strict typecheck passed. Production build passed with `NODE_ENV=production`; the inherited nonstandard local value caused the first build to fail. All implemented routes were generated.
+- Status: repository configuration is ready; the observed public Vercel platform `NOT_FOUND` does not identify a unique cause. Authenticated Vercel settings/build logs are not available in this session, so root-directory and domain/deployment assignments remain unverified. Assets and backend integrations remain deferred.
+- Next task: verify the new production deployment and its domain; if the platform 404 persists, inspect Vercel root directory, build logs, commit, and production domain assignment.
